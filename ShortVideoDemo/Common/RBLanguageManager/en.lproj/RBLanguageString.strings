@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  多语言
+
+  Created by 冉彬 on 2020/12/23.
+  
+*/
+
+
+"示例" = "Example";
+"其他" = "Other";
+"切换语言" = "Change languages";
+"空数据示例" = "Null data example";
+"默认" = "Default";
+"有数据" = "Have data";
+"自定义" = "Custom";
+"toast弹窗与加载弹窗" = "Toast and loading pop-up window";
+"提示信息" = "Prompt information";
+"请输入提示信息" = "Please enter prompt information";
+"属性链式写法" = "Attribute chain writing";
+"网络请求" = "Network request";
+"蓝牙" = "Bluetooth";
+
