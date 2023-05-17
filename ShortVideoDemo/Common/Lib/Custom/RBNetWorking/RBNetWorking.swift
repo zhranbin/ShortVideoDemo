@@ -111,4 +111,53 @@ struct RBNetWorking: Connect, Upload {
     
     
     
+    
+    
+    
+    
+    /// 请求
+    /// - Parameters:
+    ///   - host: host
+    ///   - path: path
+    ///   - method: 请求方式
+    ///   - parameter: 参数
+    ///   - encodeType: 参数编码方式（form, json）
+    ///   - head: 请求头
+    ///   - result: 回调闭包
+    static func otherRequest(host: String,
+                                      path: String,
+                                      method: HTTPMethod,
+                                      parameter: [String: Any]? = nil,
+                                      encodeType: ParameterEncodeType = .json,
+                                      head: [AnyHashable: Any]? = nil,
+                                      isShowTip: Bool = true,
+                                      result: ((Data?, RBNetError?) -> Void)? = {_, _ in}) {
+        
+        let request = RBRequest(host: host, path: path, method: method, parameter: parameter, head: loadRequestHeader(head: head), encodeType: encodeType)
+        self.init().send(request) { data, resoonse in
+            
+            if data != nil {
+                result?(data, nil)
+                return
+            }
+            
+            let er = RBNetError.resuleError(request: request, description: "返回结果为空", code: -10086)
+            if isShowTip { RBToast.showMessage(er.localizedDescription) }
+            DispatchQueue.main.async {
+                result?(nil, er)
+            }
+            
+            
+        } failAction: { error, resoonse in
+            /// 请求失败
+            if isShowTip { RBToast.showMessage(error.localizedDescription) }
+            DispatchQueue.main.async {
+                result?(nil, error)
+            }
+        }
+        
+    }
+    
+    
+    
 }

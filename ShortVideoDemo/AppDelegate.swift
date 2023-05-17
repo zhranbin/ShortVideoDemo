@@ -34,14 +34,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.backgroundColor = UIColor.white
         window?.bounds = UIScreen.main.bounds
-        window?.rootViewController = ListVC()
+//        window?.rootViewController = ListVC()
         window?.makeKeyAndVisible()
-        
+        gotoLaunchVC()
         
         return true
     }
 
 
+    
+    /// 跳转到主界面
+    func gotoMainVC() {
+        window?.rootViewController = ListVC()
+    }
+    
+    /// 跳转到启动界面
+    func gotoLaunchVC() {
+        let vc = LaunchVC()
+        vc.netWorkingUsefulAction = {[weak self] in
+            self?.gotoMainVC()
+        }
+        window?.rootViewController = vc
+    }
+    
+    
 
 }
 

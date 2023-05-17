@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F58B93C2A13CF9B0054487B /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F58B93A2A13CF9B0054487B /* LaunchVC.swift */; };
+		3F58B93D2A13CF9B0054487B /* LaunchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F58B93B2A13CF9B0054487B /* LaunchVC.xib */; };
 		3FD8203A2A133DCC00BFE6D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD820392A133DCC00BFE6D5 /* AppDelegate.swift */; };
 		3FD8203E2A133DCC00BFE6D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8203D2A133DCC00BFE6D5 /* ViewController.swift */; };
 		3FD820412A133DCC00BFE6D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD8203F2A133DCC00BFE6D5 /* Main.storyboard */; };
@@ -233,6 +235,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F58B93A2A13CF9B0054487B /* LaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
+		3F58B93B2A13CF9B0054487B /* LaunchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchVC.xib; sourceTree = "<group>"; };
 		3FD820362A133DCC00BFE6D5 /* ShortVideoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShortVideoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD820392A133DCC00BFE6D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FD8203D2A133DCC00BFE6D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -558,6 +562,8 @@
 				3FD820442A133DCD00BFE6D5 /* LaunchScreen.storyboard */,
 				3FD820472A133DCD00BFE6D5 /* Info.plist */,
 				3FD822602A13746300BFE6D5 /* ShortVideoDemo-Bridging-Header.h */,
+				3F58B93A2A13CF9B0054487B /* LaunchVC.swift */,
+				3F58B93B2A13CF9B0054487B /* LaunchVC.xib */,
 			);
 			path = ShortVideoDemo;
 			sourceTree = "<group>";
@@ -1379,6 +1385,7 @@
 				3FD822252A1372D000BFE6D5 /* resource.bundle in Resources */,
 				3FD821FF2A1372D000BFE6D5 /* kf_resource.bundle in Resources */,
 				3FD821972A1372D000BFE6D5 /* RBLanguageString.strings in Resources */,
+				3F58B93D2A13CF9B0054487B /* LaunchVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1534,6 +1541,7 @@
 				3FD822072A1372D000BFE6D5 /* KFImageOptions.swift in Sources */,
 				3FD822552A1372D000BFE6D5 /* WKWebView+JSHandler.swift in Sources */,
 				3FD8225F2A13734E00BFE6D5 /* RBPlayerManager.swift in Sources */,
+				3F58B93C2A13CF9B0054487B /* LaunchVC.swift in Sources */,
 				3FD821D82A1372D000BFE6D5 /* FormatIndicatedCacheSerializer.swift in Sources */,
 				3FD822412A1372D000BFE6D5 /* UIView+RBCocoa.swift in Sources */,
 				3FD822402A1372D000BFE6D5 /* UITextView+RBCocoa.swift in Sources */,
