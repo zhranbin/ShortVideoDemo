@@ -23,11 +23,16 @@ class RBPlayerManager: NSObject {
     /// 播放
     /// - Parameter urlStr: 资源url
     func play(urlStr: String) {
+        let player = getPlayer(urlStr: urlStr)
+        if player.timeControlStatus == .playing {
+            return
+        }
+        
         dataModels.forEach { model in
             model.player.seek(to: CMTime.zero)
             model.player.pause()
         }
-        getPlayer(urlStr: urlStr).play()
+        player.play()
     }
     
     
@@ -57,6 +62,7 @@ class RBPlayerManager: NSObject {
                 break
             }
         }
+        
         // 预加载数据中没找到就创建一个新的
         if model == nil {
             model = RBPlayerDataModel()
@@ -74,7 +80,7 @@ class RBPlayerManager: NSObject {
         let lock = NSLock()
         lock.lock()
         defer{ lock.unlock() }
-        if dataModels.count > 10 {
+        if dataModels.count > 3 {
             dataModels.remove(at: 0)
         }
         dataModels.append(model)

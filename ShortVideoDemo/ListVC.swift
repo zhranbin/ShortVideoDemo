@@ -11,7 +11,7 @@ class ListVC: RBBaseViewController {
     
     var currentIndex:Int = 0 {
         didSet {
-            print(currentIndex)
+//            print(currentIndex)
             RBPlayerManager.shared.play(urlStr: dataAry[currentIndex])
         }
     }
@@ -20,7 +20,12 @@ class ListVC: RBBaseViewController {
         didSet {
             tableView.delegate = self
             tableView.isPagingEnabled = true
-            let head = MJRefreshNormalHeader(refreshingBlock: {[weak self] in
+            tableView.cellDidLoad = {[weak self] indexPath, _, cell in
+                if let one = self?.dataAry[1], indexPath.row == 0 {
+                    RBPlayerManager.shared.preload(urlStr: one)
+                }
+            }
+            let head = MJRefreshNormalHeader(refreshingBlock: {
             })
             head.lastUpdatedTimeLabel?.isHidden = true
             tableView.mj_header = head
@@ -52,6 +57,8 @@ class ListVC: RBBaseViewController {
 
         self.isHiddenNav = true
         dataAry = [
+            "https://img.tukuppt.com/video_show/3664703/00/02/02/5b4f07452a155.mp4",
+            "https://video_b.redocn.com/video/202107/20210714/Redcon_2021071405065614856795851_big.mp4",
             "https://video-js.51miz.com/preview/video/00/00/13/49/V-134965-7DD8DDFB.mp4",
             "https://video-js.51miz.com/preview/video/00/00/11/87/V-118704-9DCF1D74.mp4",
             "https://video-js.51miz.com/preview/element/00/01/25/83/E-1258394-B7411486.mp4",
